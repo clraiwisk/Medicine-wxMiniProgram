@@ -1,0 +1,10 @@
+<l-input label="联系人：" label-layout="right" label-width="200" value="{{model.receiverName}}" placeholder="请输入联系人..." bind:lininput="setReceiveName" type="text"/>
+<l-input label="手机号：" label-layout="right" label-width="200" value="{{model.receiverPhone}}" placeholder="请输入手机号..." bind:lininput="setReceivePhone" type="text"/>
+<l-input label="省份：" label-layout="right" label-width="200" value="{{model.province}}"placeholder="请输入省份..."  bind:lininput="setProvince" type="text"/>
+<l-input label="市区：" label-layout="right" label-width="200" value="{{model.city}}"placeholder="请输入市区..."  bind:lininput="setCity" type="text"/>
+<l-input label="县区：" label-layout="right" label-width="200" value="{{model.area}}"placeholder="请输入县区..."  bind:lininput="setArea" type="text"/>
+<l-input label="详细地址：" label-layout="right" label-width="200" value="{{model.addr}}"placeholder="请输入详细地址..."  bind:lininput="setAddr" type="text"/>
+<view class="btn-box">
+  <l-button bind:lintap="save" l-class="btn">确定</l-button>
+  <l-button bind:lintap="cacal" l-class="btn">取消</l-button>
+</view>

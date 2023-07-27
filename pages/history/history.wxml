@@ -1,0 +1,19 @@
+<view style="text-align: center; background-color: #167f7b; height: 80rpx; line-height: 80rpx; color: white; font-weight: bolder;">
+  <text>历史记录</text>
+</view>
+<view class="right">
+    <view  class="sub-box" wx:for="{{historyList}}" wx:key="id" >
+      <navigator url="/pages/goods/goods?cid={{item.productId}}" class="right-left">
+        <image src="{{comm.baseUrl + item.product.image}}" mode=""/>
+      </navigator>
+      <view class="right-right">
+        <view style="font-weight: bolder; font-size: 30rpx;">{{item.product.name}}</view>
+        <view class="area">{{item.product.dscp}}</view>
+        <view class="price">
+          <text>￥{{item.product.price}}</text>
+          <l-button size="mini" plain type="error" bindtap="remove" data-id="{{item.id}}">删除</l-button>
+        </view>
+      </view>
+    </view >
+  </view>
+  <wxs src="../comm.wxs" module="comm"/>

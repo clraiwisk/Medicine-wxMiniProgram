@@ -1,0 +1,85 @@
+<view style="text-align: center; background-color: #167f7b; height: 80rpx; line-height: 80rpx; color: white; font-weight: bolder;">
+  <text>我的</text>
+</view>
+<view class="box" wx:if="{{userId !== ''}}">
+  <view class="header">
+    <view class="img-box">
+      <image src="{{comm.baseUrl + avatar}}" mode=""/>
+      <view>{{nickName}}</view>
+    </view>
+  </view>
+  <view class="main-bar">
+    <view class="item">
+      <view>20</view>
+      <view>关注的店铺</view>
+    </view>
+    <navigator url="/pages/collect/collect" class="item">
+      <view>{{mainBar.shopCount}}</view>
+      <view>收藏的商品</view>
+    </navigator>
+    <navigator url="/pages/history/history" class="item">
+      <view>{{mainBar.historyCount}}</view>
+      <view>我的足迹</view>
+    </navigator>
+  </view>
+  <view class="order-header">
+    <view  style="border-bottom: 1px solid #f0f0f0;">
+      <view>我的订单</view>
+      <navigator url="/pages/order/order" style="color: #167f7b; font-size: 25rpx;">全部订单 ></navigator>
+    </view>
+  </view>
+  <view class="order">
+    <view class="icon-box" bindtap="payStatus">
+      <l-badge value="{{fukuanCount}}" shape="circle" l-class="icon-box">
+        <view class="icon-box">
+          <view class="iconfont font icon-daifukuan"></view>
+          <view>待付款</view>
+        </view>
+      </l-badge>
+    </view>
+    <view class="icon-box">
+      <l-badge value="{{fahuoCount}}" shape="circle" l-class="icon-box">
+        <view class="icon-box">
+          <view class="iconfont font icon-daifahuo" bindtap="fahuoStatus"></view>
+          <view>待发货</view>
+        </view>
+      </l-badge>
+    </view>
+    <view class="icon-box">
+      <l-badge value="{{shouhuoCount}}" shape="circle" l-class="icon-box">
+        <view class="icon-box">
+          <view class="iconfont font icon-31daishouhuo" bindtap="shouhuoStatus"></view>
+          <view>待收货</view>
+        </view>
+      </l-badge>
+    </view>
+    <view class="icon-box">
+      <l-badge value="{{tuikuanCount}}" shape="circle" l-class="icon-box">
+        <view class="icon-box">
+          <view class="iconfont font icon-tuikuantuihuo" bindtap="tuikuanStatus"></view>
+          <view>退款/退货</view>
+        </view>
+      </l-badge>
+    </view>
+  </view>
+  <navigator url="/pages/address/address" class="between">
+    <view>收货地址</view>
+    <view>></view>
+  </navigator>
+  <view class="between">
+    <view>联系客服</view>
+    <view>></view>
+  </view>
+  <view class="between" bindtap="exitLogin">
+    <view>退出登录</view>
+    <view>></view>
+  </view>
+</view>
+<view wx:else class="user-box">
+  <view class="user">
+    <l-icon name="user" l-class="user-icon" size="150" color="#bbb"></l-icon>
+  </view>
+  <l-button size="long" bg-color="#167f7b" bind:lintap="goLogin">去登录</l-button>
+  <view class="small-font"><text>暂时未登录，登录后享受更多权益...</text></view>
+</view>
+<wxs src="../comm.wxs" module="comm"/>

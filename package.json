@@ -1,0 +1,16 @@
+{
+  "name": "mini-medicine-mall4",
+  "version": "1.0.0",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lin-ui": "^0.9.13",
+    "miniprogram-computed": "^4.4.0",
+    "wx-search-have-history": "^0.0.2"
+  },
+  "description": ""
+}

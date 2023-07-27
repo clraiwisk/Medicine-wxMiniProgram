@@ -1,0 +1,21 @@
+<view class="title-box">
+  <l-icon name="left" style="display: inline-block; margin-left: 20rpx;" color="white" bindtap="back"></l-icon>
+  <text class="title">地址管理</text>
+</view>
+<view>
+  <view wx:for="{{list}}" wx:key="id" style="padding: 30rpx;" class="box" >
+    <view class="left" bindtap="goCart" data-item="{{item}}">
+      <view style="font-weight: bold;">{{item.province}}-{{item.city}}-{{item.area}}-{{item.addr}}</view>
+      <view style="margin: 20rpx 0;">{{item.receiverName}} <text style="margin: 20rpx;">{{item.receiverPhone}}</text></view>
+    </view>
+    <view class="right">
+      <l-button  size="mini" style="margin: 10px;" data-id="{{item.id}}" bind:tap="beginUpdate" plain special="{{true}}">
+        <l-icon name="edit"></l-icon>
+      </l-button>
+      <l-button  size="mini" style="margin: 10px;" data-id="{{item.id}}" bindtap="remove" plain special="{{true}}">
+        <l-icon name="delete" color="red"></l-icon>
+      </l-button>
+    </view>
+  </view>
+  <l-button size="long" style="margin: 10px 0;"  bindtap="beginAdd" bg-color="#167f7b">新增</l-button>
+</view>

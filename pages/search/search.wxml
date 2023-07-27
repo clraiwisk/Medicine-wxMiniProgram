@@ -1,0 +1,26 @@
+<view style="text-align: center; background-color: #167f7b; height: 80rpx; line-height: 80rpx; color: white; font-weight: bolder;">
+  <text>搜索药品</text>
+</view>
+<l-input label-width="100" clear placeholder="请输入搜索内容" label-layout="right" value="{{name}}"
+bind:lininput="setName" bind:linblur="search">
+  <l-icon name="research" slot="left"></l-icon>
+</l-input>
+<view>
+  <view>搜索历史</view>
+  <view></view>
+</view>
+<view class="right">
+    <view  class="sub-box" wx:for="{{list}}" wx:key="id" >
+      <navigator url="/pages/goods/goods?cid={{item.id}}" class="right-left">
+        <image src="{{comm.baseUrl + item.image}}" mode=""/>
+      </navigator>
+      <view class="right-right">
+        <view style="font-weight: bolder; font-size: 30rpx;">{{item.name}}</view>
+        <view class="area">{{item.dscp}}</view>
+        <view class="price">
+          <text>￥{{item.price}}</text>
+        </view>
+      </view>
+    </view >
+  </view>
+<wxs src="../comm.wxs" module="comm"/>

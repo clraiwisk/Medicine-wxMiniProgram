@@ -1,0 +1,41 @@
+/* pages/some_page/some_page.wxss */
+.box{
+  margin: 30rpx;
+  box-shadow: 0px 0px 5px 0px #bbb;
+  display: flex;
+  font-size: 28rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.left{
+  width: 500rpx;
+  padding: 20rpx;
+  border-right: 1px solid #bbb;
+}
+
+.right{
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+}
+
+.title-box{
+  background-color: #167f7b;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: white;
+  font-weight: bolder;
+  position: relative;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+}
+
+.title{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Add any additional styles for other elements within the box if needed */

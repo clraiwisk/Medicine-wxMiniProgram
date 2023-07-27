@@ -1,0 +1,104 @@
+/* pages/goods/goods.wxss */
+
+.tu{
+  color: #167f7b;
+  font-weight: bolder;
+}
+.main-box{
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.main-box>view>text{
+  font-weight: bolder;
+}
+.left{
+  border-right: 1px solid #bbb;
+  padding-right: 80rpx;
+}
+.product{
+  display: flex;
+  align-items: center;
+}
+.right{
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+.shoucang{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.left text{
+  font-size: 28rpx;
+  font-weight: 800;
+}
+.card{
+  margin-top: 20rpx;
+  box-shadow: 0px 0px 5px 0px #bbb;
+  padding: 40rpx;
+}
+.tishi{
+  padding-left: 20rpx;
+  margin-top: 20rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-radius: 25rpx;
+  background-color: #f5f7fa;
+  font-size: 25rpx;
+}
+.tx{
+  display: flex;
+  color: #333;
+}
+.img-pro{
+  width: 100%;
+  height: 1600rpx;
+}
+.img-pro image{
+  width: 100%;
+  height: 50%;
+}
+.footer{
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  height: 80rpx;
+  background-color: white;
+}
+.footer{
+  padding: 10rpx 40rpx;
+}
+.footer>view{
+  float: left;
+}
+.img-text{
+  width: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 25rpx;
+}
+.footer-right{
+  display: flex;
+}
+.cart-btn{
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 250rpx;
+  text-align: center;
+  background-color: rgb(243, 214, 66);
+  border-radius: 40rpx 0 0 40rpx;
+}
+.buy{
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 250rpx;
+  text-align: center;
+  background-color: rgb(22, 127, 123);
+  color: white;
+  border-radius: 0 40rpx 40rpx 0;
+}

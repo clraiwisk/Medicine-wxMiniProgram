@@ -1,0 +1,5 @@
+<l-input value="{{model.username}}" label="用户名：" label-layout="right"  placeholder="请输入账号"
+bind:lininput="setUserName"></l-input>
+<l-input value="{{model.password}}" label="密码：" type="password"  label-layout="right" placeholder="请输入账号"
+bind:lininput="setPassWord"></l-input>
+<l-button size="large" bind:lintap="login">登录</l-button>

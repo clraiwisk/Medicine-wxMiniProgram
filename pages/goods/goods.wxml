@@ -1,0 +1,61 @@
+<view style="text-align: center; background-color: #167f7b; height: 80rpx; line-height: 80rpx; color: white; font-weight: bolder;">
+  <text>药品详情</text>
+</view>
+<view style="width: 100%; height: 500rpx;" wx:if="{{obj.image !== underfined}}">
+  <image src="{{comm.baseUrl+obj.image}}" style="height: 100%; width: 100%;" mode=""/>
+</view>
+<view class="main-box">
+  <view><text style="font-size: 40rpx;" class="tu">￥{{obj.price}}</text></view>
+  <view class="product">
+    <view class="left">
+      <view><text>[{{obj.production}}]</text></view>
+      <view><text >{{obj.name}}</text></view>
+    </view>
+    <view class="right">
+      <view class="shoucang" bindtap="addCollect">
+        <view wx:if="{{isCollect}}">
+          <l-icon name="favor" style="text-align: center;" color="orange"></l-icon>
+          <text>已收藏</text>
+        </view>
+        <view wx:if="{{!isCollect}}">
+          <l-icon name="favor" style="text-align: center;"></l-icon>
+          <text>收藏</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view style="font-size: 20rpx;margin-top: 10rpx; color: #666;">快递，免运费</view>
+  <view class="card">
+    <view style="font-weight: bold; margin-bottom: 10rpx;">[药品描述]</view>
+    <view>
+      <view style="font-size: 28rpx; color: #666;">{{obj.dscp}}</view>
+    </view>
+  </view>
+</view>
+<view class="tishi">
+  <view class="tx">
+    <l-icon name="warning" size="25" 
+    color="#333"
+    style="margin-right: 10rpx;"></l-icon>
+    <text>请按照药品说明书或者在药师指导下购买和使用</text>
+  </view>
+</view>
+<view class="img-pro">
+  <image src="../../assets/images/info.44a9f699.png" mode=""/>
+  <image src="../../assets/images/tip.268a8831.png" mode=""/>
+</view>
+<wxs src="../comm.wxs" module="comm"/>
+<view class="footer">
+  <view class="img-text">
+    <view class="iconfont icon-store"></view>
+    <text>店铺</text>
+  </view>
+  <view bindtap="goCart" class="img-text">
+    <l-icon name="cart" size="32" color="#333"></l-icon>
+    <text>购物车</text>
+  </view>
+  <view class="footer-right">
+    <view class="cart-btn" bindtap="add" ><text>加入购物车</text></view>
+    <view class="buy"><text>立即购买</text></view>
+  </view>
+</view>

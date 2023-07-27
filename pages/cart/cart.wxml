@@ -1,0 +1,67 @@
+<view style="text-align: center; background-color: #167f7b; height: 80rpx; line-height: 80rpx; color: white; font-weight: bolder;">
+  <text>购物车</text>
+</view>
+<navigator class="header" bindtap="goAddress">
+  <view>
+    <view>地址：
+      <text wx:if="{{addressList !== null}}">{{addressList.province}}-{{addressList.city}}-{{addressList.area}}-{{addressList.addr}}</text>
+      <text wx:else></text>
+    </view>
+    <view style="margin-top: 20rpx;">
+      联系人：<text style="width: 200rpx; display: inline-block;">{{addressList.receiverName}}</text>
+      电话：<text>{{addressList.receiverPhone}}</text>
+    </view>
+  </view>
+  <view style="font-size: 40rpx;">
+    >
+  </view>
+</navigator>
+<view style="height: 10rpx; background-image: url(/assets/images/cart_border@2x.png); background-size: 100% 100%; background-position: 0% 0%;"></view>
+<view class="cart-box" wx:if="{{userId !== ''}}">
+  <view class="main-header">
+    <l-icon name="cart" color="#333" style="margin-right: 20rpx;"></l-icon>
+    购物车
+  </view>
+  <l-slide-view height="240" width="750" slide-width="120" wx:for="{{cartList}}" wx:key="id">
+  <view slot="left">
+    <view class="right">
+      <view  class="sub-box" >
+        <view>
+          
+        </view>
+        <view class="right-left">
+          <image src="{{comm.baseUrl + item.productImage}}" mode=""/>
+        </view>
+        <view class="right-right">
+          <view style="font-weight: bolder; font-size: 30rpx;">{{item.productName}}</view>
+          <view class="area">{{item.productDesc}}</view>
+          <view class="price">
+            <text>￥{{item.productPrice}}</text>
+            <view class="btn">
+              <button bindtap="decCount" data-item="{{item}}" disabled="{{item.productCount === 1}}">-</button>
+              <text style="font-weight: bolder; width: 60rpx; display: inline-block; text-align: center;">{{item.productCount}}</text>
+              <button bindtap="addCount" data-item="{{item}}">+</button>
+            </view>
+          </view>
+        </view>
+      </view >
+    </view>
+  </view>
+  <view slot="right">
+    <view class="hid-right" style="background-color: #900;" bindtap="remove" data-id="{{item.id}}">删除</view>
+  </view>
+</l-slide-view>
+<view class="footer">
+  <view>
+    <view>
+      <text>总计金额：</text>
+      <text class="amount">￥{{amount}}</text>
+    </view>
+    <view class="footer-btn" bindtap="addOrder" data-item="{{item}}">购买</view>
+  </view>
+</view>
+</view>
+<view wx:else>
+  <view class="small-font"><text>暂时未登录，登录后享受更多权益...</text></view>
+</view>
+<wxs src="../comm.wxs" module="comm"/>

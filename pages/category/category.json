@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "l-icon": "/miniprogram_npm/lin-ui/icon/index",
+    "l-toast":"/miniprogram_npm/lin-ui/toast/index"
+  }
+}

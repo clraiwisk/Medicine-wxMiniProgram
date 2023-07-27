@@ -1,0 +1,44 @@
+<view class="bg">
+  <navigator url="/pages/search/search" class="search-btn">
+    <l-icon name="research" size="28" color="#333" style="display: inline-block;"></l-icon>
+    <text style="margin: 0 20rpx;">搜索</text>
+  </navigator>
+</view>
+<view>
+  <swiper interval="3000" indicator-dots="true" autoplay="true" circular="true" style="height: 400rpx;">
+    <swiper-item wx:for="{{carousels}}" wx:key="id">
+      <navigator url="/pages/goods/goods?cid={{item.productId}}" style="width: 100%; height: 100%;">
+        <image style="width: 100%; height: 100%;" src="{{comm.baseUrl + item.productImage}}" mode=""/>
+      </navigator>
+    </swiper-item>
+  </swiper>
+</view>
+<view class="lianjie">
+  <view class="item">
+    <l-icon name="user"></l-icon>
+    <view>常备</view>
+  </view>
+  <view bindtap="goCategory" class="item">
+    <view style="font-size: 50rpx; color: #167f7b;" class="iconfont icon-fenlei"></view>
+    <view>分类</view>
+  </view>
+  <view class="item">
+    <view style="font-size: 50rpx; color: red;" class="iconfont icon-rexiaochanpin"></view>
+    <view>热销</view>
+  </view>
+  <view class="item">
+    <l-icon name="favor" color="#167f7b"></l-icon>
+    <view>收藏</view>
+  </view>
+</view>
+<view class="main-container" wx:for="{{recommend}}" wx:key="id">
+  <view class="header"><text>{{item.categoryName}}</text></view>
+  <view class="img-box">
+    <view wx:for="{{item.recommendInfos}}" wx:key="id" wx:for-item="item2" class="img-container">
+      <navigator url="/pages/goods/goods?cid={{item2.productId}}" style="width: 100%; height: 100%;">
+        <image src="{{comm.baseUrl + item2.productImage}}" mode=""/>
+      </navigator>
+    </view>
+  </view>
+</view>
+<wxs src="../comm.wxs" module="comm"/>

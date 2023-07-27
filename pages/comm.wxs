@@ -1,0 +1,1 @@
+module.exports.baseUrl = "http://192.168.110.250:2709/medicine/"

@@ -1,0 +1,32 @@
+<view>
+  <view class="item" wx:for="{{orderList}}" wx:key="id">
+    <view class="header">
+      <view>正品医药，放心选购</view>
+      <view>{{item.createTime}}</view>
+    </view>
+    <view class="main">
+      <view class="main-item">
+        <view wx:for="{{item.orderDetails}}" wx:for-item="item2" wx:key="id">
+        <navigator url="/pages/goods/goods?cid={{item2.productId}}" class="main-img-box">
+          <image src="{{comm.baseUrl + item2.productImage}}" mode=""/>
+        </navigator>
+      </view>
+      </view>
+      <view class="neirong">
+        <view style="width: 200rpx;">
+        </view>
+        <view>
+            <view class="font">免运费 <text>￥{{item.amount}}</text></view>
+            <view class="cal-btn">
+              <l-button wx:if="{{item.status === 1}}" plain size="mini" l-class="btn" disabled data-id="{{item.id}}">确认收货</l-button>
+              <l-button wx:if="{{item.status !== 3}}" plain size="mini" l-class="btn" bind:lintap="cancal" data-id="{{item.id}}">取消订单</l-button>
+              <l-button wx:if="{{item.status === -1}}" plain size="mini" l-class="btn" bind:lintap="goPay" data-id="{{item.id}}">去付款</l-button>
+              <l-button wx:if="{{item.status === 0}}" plain size="mini" l-class="btn" bind:lintap="goExid" data-id="{{item.id}}">退款/退货</l-button>
+              <l-button wx:if="{{item.status === 3}}" plain size="mini" l-class="btn" disabled data-id="{{item.id}}">等待退货中</l-button>
+            </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<wxs src="../comm.wxs" module="comm"/>

@@ -1,0 +1,137 @@
+/* pages/cart/cart.wxss */
+.right{
+  flex-grow: 1;
+  height: 100%;
+  overflow: auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.right>.sub-box{
+  width: 100%;
+  height: 300rpx;
+  display: flex;
+  margin-bottom: 20rpx;
+}
+
+.right-left{
+  width: 200rpx;
+  margin-right: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.area{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  font-size: 25rpx;
+  height: 100rpx;
+  margin: 10rpx 0;
+}
+
+.right-left image{
+  width: 100%;
+  height: 200rpx;
+  object-fit: cover;
+}
+
+.price{
+  display: flex;
+  justify-content: space-between;
+  color: #167f7b;
+  font-size: 28rpx;
+}
+
+.right-right{
+  flex-grow: 1;
+}
+
+.btn button{
+  display: inline-block;
+  width: 80rpx;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 30rpx;
+  height: 60rpx;
+  background-color: #167f7b;
+  color: white;
+  border: none;
+  border-radius: 30rpx;
+  font-size: 28rpx;
+}
+
+.btn text{
+  vertical-align: middle;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 40rpx;
+  align-items: center;
+  font-size: 30rpx;
+  color: rgb(102, 101, 101);
+  background-color: rgb(255, 255, 255);
+}
+
+.main-header{
+  display: flex;
+  padding: 20rpx;
+  border-bottom: 1px solid #bbb;
+}
+
+.small-font{
+  color: #666;
+  padding: 40rpx;
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.hid-right{
+  width: 120rpx; 
+  height: 80rpx; 
+  line-height: 80rpx;
+  text-align: center;
+  background-color: #167f7b;
+  color: white;
+  font-size: 28rpx;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.footer-btn{
+  width: 200rpx; 
+  height: 70rpx; 
+  border-radius: 35rpx;
+  line-height: 70rpx;
+  text-align: center;
+  background-color: #167f7b;
+  color: white;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.footer{
+  background-color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 20rpx;
+}
+
+.footer>view{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 32rpx;
+  color: #333;
+}
+
+.amount{
+  color: #167f7b;
+  font-size: 45rpx;
+  font-weight: bold;
+}

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "l-input":"/miniprogram_npm/lin-ui/input/index",
+    "l-icon":"/miniprogram_npm/lin-ui/icon/index",
+    "l-form":"/miniprogram_npm/lin-ui/form/index",
+    "l-form-item":"/miniprogram_npm/lin-ui/form-item/index",
+    "searchHaveHistory":"/miniprogram_npm/wx-search-have-history"
+  }
+}

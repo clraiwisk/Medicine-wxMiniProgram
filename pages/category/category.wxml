@@ -1,0 +1,32 @@
+<view class="bg">
+  <navigator url="/pages/search/search" class="search-btn">
+    <l-icon name="research" size="28" color="#333" style="display: inline-block;"></l-icon>
+    <text style="margin: 0 20rpx;">搜索</text>
+  </navigator>
+</view>
+<view class="box">
+  <view class="left">
+    <view class="left-item" wx:for="{{list}}" wx:key="id" bindtap="onSelect"
+    data-id="{{item.id}}" wx:if="{{item.name !== ''}}">
+      <text class="{{item.id === activedId ? 'actived': '' }}">{{item.name}}</text>
+    </view>
+  </view>
+  <view class="right" wx:if="{{listSub.length > 0}}">
+    <view  class="sub-box" wx:for="{{listSub}}" wx:key="id" >
+      <navigator url="/pages/goods/goods?cid={{item.id}}" class="right-left">
+        <image src="{{comm.baseUrl + item.image}}" mode=""/>
+      </navigator>
+      <view class="right-right">
+        <view style="font-weight: bolder; font-size: 30rpx;">{{item.name}}</view>
+        <view class="area">{{item.dscp}}</view>
+        <view class="price">
+          <text>￥{{item.price}}</text>
+          <l-icon name="add" color="#167f7b" bindtap="add" data-item="{{item}}"></l-icon>
+        </view>
+      </view>
+    </view >
+  </view>
+  <view wx:else style="padding: 40rpx;">暂无相关用药---</view>
+</view>
+<l-toast></l-toast>
+<wxs src="../comm.wxs" module="comm"/>
